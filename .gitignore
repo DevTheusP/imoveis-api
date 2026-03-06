@@ -1,0 +1,28 @@
+# Arquivos compilados do Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest e cobertura de testes
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Ambiente Virtual
+.venv/
+venv/
+ENV/
+env/
+
+# Banco de dados SQLite local
+*.db
+*.sqlite3
+
+# Arquivos de IDE e SO
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Variáveis de ambiente
+.env
