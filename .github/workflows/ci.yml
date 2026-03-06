@@ -29,8 +29,9 @@ jobs:
 
       - name: Rodar checagem de estilo com Ruff
         run: |
-          ruff check .
+          ruff check app tests
 
       - name: Rodar Testes com Pytest
         run: |
-          pytest
+          python -m pytest
+
