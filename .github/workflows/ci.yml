@@ -1,0 +1,36 @@
+name: Testes Automatizados (CI)
+
+# Configura o script para rodar toda vez que fizermos push na branch principal (main)
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Baixar o código do repositório
+        uses: actions/checkout@v3
+
+      - name: Configurar o Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+          
+      - name: Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Rodar checagem de estilo com Ruff
+        run: |
+          ruff check .
+
+      - name: Rodar Testes com Pytest
+        run: |
+          pytest
