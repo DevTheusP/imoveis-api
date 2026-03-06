@@ -1,5 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import models 
+from database import engine
+
+# cria as tabelas no banco de dados
+models.Base.metadata.create_all(bind=engine)
 
 # inicializa o fastapi com metadados pro swagger (/docs)
 app = FastAPI(
