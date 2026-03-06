@@ -1,15 +1,10 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
+from app.core.config import settings
 
-# url de conexão com o sqlite vai criar um arquivo chamado imoveis.db na mesma pasta
-
-SQLALCHEMY_DATABASE_URL = "sqlite:///./imoveis.db"
-
-# engine é quem conversa com o banco
-# check_same_thread=False é para o sqlite quando usado com o fastapi ( que é assíncrono) não bloquear a thread
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    settings.DATABASE_URL, connect_args={"check_same_thread": False}
 )
 
 # sessionlocal é a nossa sessao , usada para fazer as queries
