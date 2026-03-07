@@ -9,8 +9,8 @@ from app.api.routers import imoveis, auth
 from app.core.config import settings # <--- Faltava este import!
 
 # Criação das tabelas
-models_imovel.Base.metadata.create_all(bind=engine)
-models_usuario.Base.metadata.create_all(bind=engine) # <--- Cria tabela de usuários
+#models_imovel.Base.metadata.create_all(bind=engine)
+#models_usuario.Base.metadata.create_all(bind=engine) # <--- Cria tabela de usuários
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
