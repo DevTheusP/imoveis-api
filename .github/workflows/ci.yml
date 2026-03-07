@@ -33,5 +33,6 @@ jobs:
 
       - name: Rodar Testes com Pytest
         run: |
+          alembic upgrade head
           python -m pytest
 
