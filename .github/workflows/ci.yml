@@ -32,6 +32,10 @@ jobs:
           ruff check app tests
 
       - name: Rodar Testes com Pytest
+        env:
+          DATABASE_URL: sqlite:///./test.db
+          SECRET_KEY: secret_para_testes_ci_123
+          ALGORITHM: HS256
         run: |
           alembic upgrade head
           python -m pytest
