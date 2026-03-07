@@ -3,8 +3,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi import Request
 from fastapi.responses import JSONResponse
 #from app.db.database import engine
-from app.models import imovel as models_imovel
-from app.models import usuario as models_usuario # <--- Novo modelo
+#from app.models import imovel as models_imovel
+#from app.models import usuario as models_usuario # <--- Novo modelo
 from app.api.routers import imoveis, auth
 from app.core.config import settings # <--- Faltava este import!
 
